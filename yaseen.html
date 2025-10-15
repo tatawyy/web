@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz APPlication</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="oob.css">
+</head>
+
+<body>
+
+
+
+    <div class="quiz-app">
+        <div class="quiz-info">
+            <div class="category">Category <span>HTML</span></div>
+            <div class="count">Question count: <span>9</span></div>
+        </div>
+        <div class="quiz-area"> </div>
+        <div class="answers-area"> </div>
+        <button class="submit-button"> Submit Answer</button>
+        <div class="bullets">
+            <div class="spans">
+                
+            
+                
+            </div>
+            <div class="countdown">
+            
+            <span class ="minutes">02</span>:
+                <span class="seconds">45</span>
+
+            </div>
+        </div>
+        <div class="results">
+       </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="quiz"></div>
+    <script>
+        fetch('html.que.json')
+            .then(response => response.json())
+            .then(data => {
+                const quizDiv = document.getElementById('quiz-area');
+                data.forEach(q => {
+                    const question = document.createElement('div');
+                    question.innerHTML = `<h3>${q.title}</h3>
+                         <ul>
+                            <li>${q.answer_1}</li>
+                            <li>${q.answer_2}</li>
+                            <li>${q.answer_3}</li>
+                            <li>${q.answer_4}</li>
+                        </ul>`;
+                    quizDiv.appendChild(question);
+                });
+            });
+    </script>
+    <script src="y.js">
+
+    </script>
+    <nav id="">
+        <div class="">
+            <ul>
+                <li><a href="">Home</li>
+                <li><a href="">Abut</li>
+                <li><a href="">services</li>
+                <li><a href="">Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <footer id="main-footer">
+        <p>Yaseen &2025; My webside</p>
+    </footer>
+</body>
+
+</html>
